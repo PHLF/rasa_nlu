@@ -164,7 +164,7 @@ class RasaNLU(object):
         kwargs = {key.decode('utf-8', 'strict'): value[0].decode('utf-8', 'strict') for key, value in
                   request.args.items()}
         request.setHeader('Content-Type', 'application/json')
-
+        
         try:
             request.setResponseCode(200)
             response = yield self.data_router.start_train_process(data_string, kwargs)
